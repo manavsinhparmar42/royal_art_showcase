@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define an animation for the mixed neon-color gradient in the background. */
+@keyframes neon-background {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* This class creates an animated mixed neon linear gradient.
+   You can adjust the color values below to match your vision. */
+.neon-background {
+  background: linear-gradient(
+    -45deg,
+    #0d001a,
+    #001a1d,
+    #1a0d00,
+    #0d1a00,
+    #1a001d,
+    #0d001a
+  );
+  background-size: 400% 400%;
+  animation: neon-background 25s ease infinite;
+}
+
+/* Define an animation to make the outlined floral lines glow and shift between neon colors. */
+@keyframes neon-glow-flowers {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px #00e5ff) drop-shadow(0 0 10px #00e5ff99)
+      drop-shadow(0 0 15px #00e5ff66);
+    stroke: #00e5ff;
+  }
+  20% {
+    filter: drop-shadow(0 0 8px #ffcc00) drop-shadow(0 0 15px #ffcc0099)
+      drop-shadow(0 0 25px #ffcc0066);
+    stroke: #ffcc00;
+  }
+  40% {
+    filter: drop-shadow(0 0 8px #00ff66) drop-shadow(0 0 15px #00ff6699)
+      drop-shadow(0 0 25px #00ff6666);
+    stroke: #00ff66;
+  }
+  60% {
+    filter: drop-shadow(0 0 8px #ff00ff) drop-shadow(0 0 15px #ff00ff99)
+      drop-shadow(0 0 25px #ff00ff66);
+    stroke: #ff00ff;
+  }
+  80% {
+    filter: drop-shadow(0 0 8px #ff00cc) drop-shadow(0 0 15px #ff00cc99)
+      drop-shadow(0 0 25px #ff00cc66);
+    stroke: #ff00cc;
+  }
+}
+.flower-glow {
+  animation: neon-glow-flowers 10s ease infinite;
+}
